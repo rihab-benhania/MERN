@@ -1,0 +1,142 @@
+/* Style fourni : il n'est pas à modifier pendant la séance. */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, 'Segoe UI', Arial, sans-serif;
+}
+
+/* Les couleurs du thème clair, puis du thème sombre */
+.app {
+  --fond: #f3f5f9;
+  --carte: #ffffff;
+  --texte: #1f2937;
+  --discret: #6b7280;
+  --bord: #e2e6ec;
+  --accent: #0b6bcb;
+  min-height: 100vh;
+  background: var(--fond);
+  color: var(--texte);
+}
+
+.app.dark {
+  --fond: #111827;
+  --carte: #1f2937;
+  --texte: #f3f4f6;
+  --discret: #9ca3af;
+  --bord: #374151;
+  --accent: #3b8eea;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 32px;
+  background: var(--carte);
+  border-bottom: 1px solid var(--bord);
+}
+
+.navbar h1 {
+  margin: 0 auto 0 0;
+  font-size: 1.4rem;
+}
+
+.badge {
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.page {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  align-items: start;
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px 32px;
+}
+
+.card {
+  padding: 18px 24px;
+  border: 1px solid var(--bord);
+  border-radius: 12px;
+  background: var(--carte);
+}
+
+.card h2 {
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+
+.ligne {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--bord);
+}
+
+.prix,
+.vide {
+  color: var(--discret);
+}
+
+.prix {
+  margin-left: 6px;
+}
+
+.total {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+button {
+  padding: 6px 12px;
+  border: 1px solid var(--bord);
+  border-radius: 8px;
+  background: var(--fond);
+  color: var(--texte);
+  font: inherit;
+  cursor: pointer;
+}
+
+button + button {
+  margin-left: 6px;
+}
+
+button.principal {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #ffffff;
+}
+
+/* Pour les défis : le prix remisé (défi 2) et la notification (défi 3) */
+.remise {
+  color: #15803d;
+  font-weight: 600;
+}
+
+.toast {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  padding: 12px 18px;
+  border-radius: 8px;
+  background: #15803d;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 800px) {
+  .page {
+    grid-template-columns: 1fr;
+  }
+}
